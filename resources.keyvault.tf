@@ -14,39 +14,6 @@ resource "azurerm_key_vault_access_policy" "spnpolicy" {
     key_vault_id = azurerm_key_vault.tfstatekv.id
     tenant_id = data.azurerm_client_config.current.tenant_id
     object_id = module.mod_spn.service_principal_object_id
-    
-   key_permissions = [
-        "Get",
-        "List",
-        "Create",
-        "Delete",
-        "Purge"
-    ]
-    secret_permissions = [
-        "Get",
-        "List",
-        "Set",
-        "Delete",
-        "Purge",
-        "Recover"
-
-        ]
-
-        storage_permissions = [
-        "Get",
-        "GetSAS",
-        "SetSAS",
-        "Delete",
-        "Purge"
-
-        ]
-}
-
-resource "azurerm_key_vault_access_policy" "current" {
-  
-    key_vault_id = azurerm_key_vault.tfstatekv.id
-    tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = data.azuread_client_config.current.object_id
 
      key_permissions = [
         "Get",
@@ -61,8 +28,41 @@ resource "azurerm_key_vault_access_policy" "current" {
         storage_permissions = [
         "Get",
         "GetSAS"
-
         ]
+  
+}
+
+resource "azurerm_key_vault_access_policy" "current" {
+  
+    key_vault_id = azurerm_key_vault.tfstatekv.id
+    tenant_id = data.azurerm_client_config.current.tenant_id
+    object_id = data.azuread_client_config.current.object_id
+
+     key_permissions = [
+        "Get",
+        "List",
+        "Create",
+        "Delete",
+        "Purge"
+    ]
+    
+    secret_permissions = [
+        "Get",
+        "List",
+        "Set",
+        "Delete",
+        "Purge",
+        "Recover"
+        ]
+
+        storage_permissions = [
+        "Get",
+        "GetSAS",
+        "SetSAS",
+        "Delete",
+        "Purge"
+        ]
+    
 }
 
 resource "azurerm_key_vault_secret" "tfstatekvsecret" {

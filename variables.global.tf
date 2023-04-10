@@ -17,7 +17,7 @@ variable "environment" {
 variable "org_name" {
     description = "Name of the organization"
     type = string
-    default = "testorg"
+    default = "ampe"
 }
 
 variable "tags" {

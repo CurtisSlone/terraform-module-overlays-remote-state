@@ -1,6 +1,6 @@
 variable "service_principal_name" {
   description = "The name of the service principal"
-  default     = "dev-app-spn"
+  default     = "static-web-page-spn"
 }
 
 variable "identifier_uris" {
@@ -11,5 +11,5 @@ variable "identifier_uris" {
 
 variable "service_principal_description" {
   description = "A description of the service principal provided for internal end-users."
-  default     = "SPN for XXX App"
+  default     = "SPN for AMPE Static Web App"
 }
