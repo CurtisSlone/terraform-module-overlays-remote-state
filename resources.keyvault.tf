@@ -49,27 +49,17 @@ resource "azurerm_key_vault_access_policy" "current" {
 
      key_permissions = [
         "Get",
-        "List",
-        "Create",
-        "Delete",
-        "Purge"
+        "List"
     ]
     secret_permissions = [
         "Get",
-        "List",
-        "Set",
-        "Delete",
-        "Purge",
-        "Recover"
+        "List"
 
         ]
 
         storage_permissions = [
         "Get",
-        "GetSAS",
-        "SetSAS",
-        "Delete",
-        "Purge"
+        "GetSAS"
 
         ]
 }
