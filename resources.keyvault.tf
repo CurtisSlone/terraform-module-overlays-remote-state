@@ -4,8 +4,9 @@ resource "azurerm_key_vault" "tfstatekv" {
   resource_group_name = module.mod_network_artifacts_rg.resource_group_name
   sku_name = "standard"
   tenant_id = data.azurerm_client_config.current.tenant_id
-  enabled_for_disk_encryption = false
-  purge_protection_enabled = false
+  enabled_for_disk_encryption = true
+  purge_protection_enabled = false # Change for production environment
+  
 }
 
 resource "azurerm_key_vault_access_policy" "spnpolicy" {
