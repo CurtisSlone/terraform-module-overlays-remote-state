@@ -8,6 +8,7 @@ module "mod_state_keyvault" {
 
     create_key_vault_resource_group = false
     custom_resource_group_name = module.mod_network_artifacts_rg.resource_group_name
+    custom_name = "${lower(var.org_name)}tfdevkv"
     location = var.location
     environment = var.environment
     workload_name = var.workload_name

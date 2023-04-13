@@ -19,5 +19,6 @@ module "mod_spn" {
             scope = "subscriptions/${data.azurerm_client_config.current.subscription_id}"
             role_definition_name = "Contributor"
         }
+
     ]
 }

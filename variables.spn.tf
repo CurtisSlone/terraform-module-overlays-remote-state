@@ -1,6 +1,6 @@
 variable "service_principal_name" {
   description = "The name of the service principal"
-  default     = "static-web-page-spn"
+  default     = "AMPE-SWP-SPN"
 }
 
 variable "identifier_uris" {
